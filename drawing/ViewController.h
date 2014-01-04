@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "customGestureRecognizer.h"
+#import "drawingClass.h"
 @interface ViewController : UIViewController
-
+@property (nonatomic) customGestureRecognizer* recognizer;
+@property drawingClass* simple;
+-(void) DrawLine;
 @end

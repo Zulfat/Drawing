@@ -21,6 +21,9 @@
 		1377A54F187810300071AFA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1377A531187810300071AFA3 /* UIKit.framework */; };
 		1377A557187810300071AFA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1377A555187810300071AFA3 /* InfoPlist.strings */; };
 		1377A559187810300071AFA3 /* drawingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377A558187810300071AFA3 /* drawingTests.m */; };
+		1377A564187816B90071AFA3 /* drawingClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377A563187816B90071AFA3 /* drawingClass.m */; };
+		1377A56718781BBA0071AFA3 /* customGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377A56618781BBA0071AFA3 /* customGestureRecognizer.m */; };
+		1377A56A187834210071AFA3 /* objects.m in Sources */ = {isa = PBXBuildFile; fileRef = 1377A569187834210071AFA3 /* objects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,12 @@
 		1377A554187810300071AFA3 /* drawingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "drawingTests-Info.plist"; sourceTree = "<group>"; };
 		1377A556187810300071AFA3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1377A558187810300071AFA3 /* drawingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = drawingTests.m; sourceTree = "<group>"; };
+		1377A562187816B90071AFA3 /* drawingClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = drawingClass.h; sourceTree = "<group>"; };
+		1377A563187816B90071AFA3 /* drawingClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = drawingClass.m; sourceTree = "<group>"; };
+		1377A56518781BBA0071AFA3 /* customGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customGestureRecognizer.h; sourceTree = "<group>"; };
+		1377A56618781BBA0071AFA3 /* customGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customGestureRecognizer.m; sourceTree = "<group>"; };
+		1377A568187834210071AFA3 /* objects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = objects.h; sourceTree = "<group>"; };
+		1377A569187834210071AFA3 /* objects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = objects.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +126,12 @@
 				1377A53F187810300071AFA3 /* Main.storyboard */,
 				1377A542187810300071AFA3 /* ViewController.h */,
 				1377A543187810300071AFA3 /* ViewController.m */,
+				1377A56518781BBA0071AFA3 /* customGestureRecognizer.h */,
+				1377A56618781BBA0071AFA3 /* customGestureRecognizer.m */,
+				1377A562187816B90071AFA3 /* drawingClass.h */,
+				1377A563187816B90071AFA3 /* drawingClass.m */,
+				1377A568187834210071AFA3 /* objects.h */,
+				1377A569187834210071AFA3 /* objects.m */,
 				1377A545187810300071AFA3 /* Images.xcassets */,
 				1377A534187810300071AFA3 /* Supporting Files */,
 			);
@@ -250,8 +265,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1377A544187810300071AFA3 /* ViewController.m in Sources */,
+				1377A56718781BBA0071AFA3 /* customGestureRecognizer.m in Sources */,
 				1377A53E187810300071AFA3 /* AppDelegate.m in Sources */,
 				1377A53A187810300071AFA3 /* main.m in Sources */,
+				1377A56A187834210071AFA3 /* objects.m in Sources */,
+				1377A564187816B90071AFA3 /* drawingClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
