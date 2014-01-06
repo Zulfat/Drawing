@@ -45,13 +45,8 @@
             startPoint = [[pointsArray objectAtIndex:j] CGPointValue];
             endPoint = [[pointsArray objectAtIndex:j+1] CGPointValue];
             nextPoint = [[pointsArray objectAtIndex:j+2] CGPointValue];
-            bezierHelper1 = CGPointMake(startPoint.x - dx, startPoint.y - dy);
-            Bi = -1/(4+Bi);
-            Aix=(nextPoint.x-startPoint.x-Aix)/(4+Bi);
-            dx=Aix+Bi*dx;
-            Aiy=(nextPoint.y-startPoint.y-Aiy)/(4+Bi);
-            dy=Aix+Bi*dy;
-            bezierHelper2 = CGPointMake(startPoint.x+dx,startPoint.y+dy);
+            bezierHelper1 = CGPointMake(endPoint.x + (endPoint.x-nextPoint.x)/8 + (startPoint.x-endPoint.x)/4, endPoint.y + (endPoint.y-nextPoint.y)/8 + (startPoint.y-endPoint.y)/5);
+            bezierHelper2 = CGPointMake(endPoint.x + (endPoint.x-nextPoint.x)/4 + (startPoint.x-endPoint.x)/8, endPoint.y + (endPoint.y-nextPoint.y)/4 + (startPoint.y-endPoint.y)/8);
             CGContextSetRGBStrokeColor(context, 255, 0, 255, 1);
             CGContextBeginPath(context);
             CGContextMoveToPoint(context, startPoint.x, startPoint.y);
