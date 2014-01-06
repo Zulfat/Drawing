@@ -26,36 +26,26 @@
     // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextClearRect(context, rect); // Очистим context
-    
-//    CGContextSetRGBFillColor(context, 255, 0, 0, 1);
-//    CGContextFillRect(context, CGRectMake(20, 20, 100, 100));
-//    CGContextSetRGBStrokeColor(context, 255, 0, 255, 1);
-//    CGContextBeginPath(context);
-//        CGContextMoveToPoint(context, startPoint.x, startPoint.y);
-//        CGContextAddCurveToPoint(context,
-//                             bezierHelper1.x, bezierHelper1.y,
-//                             bezierHelper2.x, bezierHelper2.y,
-//                             endPoint.x, endPoint.y);
-//        CGContextStrokePath(context);
     objects* obj = [objects sharedObjects];
     CGPoint bezierHelper1;
-    CGPoint bezierHelper2;
     CGPoint startPoint;
     CGPoint endPoint;
+    CGPoint nextPoint;
+    CGContextSetRGBStrokeColor(context, 255, 0, 255, 1);
+    CGContextSetLineWidth(context, 1);
+    CGContextSetLineCap(context, kCGLineCapRound);
     for (int i=0; i<[obj.drawingObjects count];i++) {
         NSArray* pointsArray = [obj.drawingObjects objectAtIndex:i];
-        for (int j=0;j<[pointsArray count]-3;j+=3) {
+        for (int j=0;j<[pointsArray count]-3;j++) {
             startPoint = [[pointsArray objectAtIndex:j] CGPointValue];
-            bezierHelper1 = [[pointsArray objectAtIndex:j+1] CGPointValue];
-            bezierHelper2 = [[pointsArray objectAtIndex:j+2] CGPointValue];
-            endPoint = [[pointsArray objectAtIndex:j+3] CGPointValue];
-            CGContextSetRGBStrokeColor(context, 255, 0, 255, 1);
+//            bezierHelper1 = [[pointsArray objectAtIndex:j+1] CGPointValue];
+//            bezierHelper2 = [[pointsArray objectAtIndex:j+2] CGPointValue];
+            nextPoint = [[pointsArray objectAtIndex:j+2] CGPointValue];
+            endPoint = [[pointsArray objectAtIndex:j+1] CGPointValue];
             CGContextBeginPath(context);
             CGContextMoveToPoint(context, startPoint.x, startPoint.y);
-            CGContextAddCurveToPoint(context,
-                                     bezierHelper1.x, bezierHelper1.y,
-                                     bezierHelper2.x, bezierHelper2.y,
-                                     endPoint.x, endPoint.y);
+            bezierHelper1 = CGPointMake(endPoint.x-(nextPoint.x-endPoint.x)/3+(startPoint.x - endPoint.x)/3, endPoint.y-(nextPoint.y-endPoint.y)/3+(startPoint.y - endPoint.y)/3);
+            CGContextAddQuadCurveToPoint(context, bezierHelper1.x, bezierHelper1.y, endPoint.x, endPoint.y);
             CGContextStrokePath(context);
         }
     }

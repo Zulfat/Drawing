@@ -11,6 +11,7 @@
 
 @interface customGestureRecognizer : UIGestureRecognizer
 @property (nonatomic) NSMutableArray* points;
+@property (nonatomic) NSDate* prevTime;
 - (void)reset;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
