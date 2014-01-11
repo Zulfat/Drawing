@@ -61,10 +61,17 @@
         CGContextStrokePath(context);
     }
     if (obj.stoped) {
-        UIGraphicsBeginImageContext(self.frame.size);
+        UIGraphicsBeginImageContext(rect.size);
         [self.layer renderInContext:UIGraphicsGetCurrentContext()];
         _image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
+        obj.drawingObjects=nil;
+        obj.stoped = false;
+        obj.drawingObjects = [[NSMutableArray alloc] init];
+        [obj.drawingObjects addObject:[pointsArray objectAtIndex:[pointsArray count]-4]];
+        [obj.drawingObjects addObject:[pointsArray objectAtIndex:[pointsArray count]-3]];
+        [obj.drawingObjects addObject:[pointsArray objectAtIndex:[pointsArray count]-2]];
+        [obj.drawingObjects addObject:[pointsArray objectAtIndex:[pointsArray count]-1]];
         //UIImageWriteToSavedPhotosAlbum(_image, self, nil, nil);
     }
 }

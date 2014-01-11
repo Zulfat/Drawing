@@ -30,6 +30,9 @@
     [obj.drawingObjects addObject:[NSValue valueWithCGPoint:nowPoint]];
     if ([obj.drawingObjects count]>=3)
         self.state = UIGestureRecognizerStateChanged;
+    if ([obj.drawingObjects count] >=50) {
+        obj.stoped = true;
+    }
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
