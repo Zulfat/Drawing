@@ -19,6 +19,8 @@
 {
     [super viewDidLoad];
     simple  = [[drawingClass alloc] initWithFrame:self.view.bounds];
+    [simple setColor:[UIColor greenColor]];
+    [simple setPenWidth:10];
     [self.view addSubview:simple];
     recognizer = [[customGestureRecognizer alloc] initWithTarget:self action:@selector(DrawLine)];
     [self.view addGestureRecognizer:recognizer];

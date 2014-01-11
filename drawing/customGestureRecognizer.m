@@ -15,27 +15,28 @@
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
-    if (!_points)
-        self.points = [[NSMutableArray alloc] init];
-    else
-        _points=nil;//->reset
+    objects* obj = [objects sharedObjects];
+    if (obj.drawingObjects)
+        obj.drawingObjects = nil;
+    obj.drawingObjects = [[NSMutableArray alloc] init];
+    obj.stoped = false;
     CGPoint nowPoint = [touches.anyObject locationInView:self.view];
-    [_points addObject:[NSValue valueWithCGPoint:nowPoint]];
-    //self.state = UIGestureRecognizerStateRecognized;
+    [obj.drawingObjects addObject:[NSValue valueWithCGPoint:nowPoint]];
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesMoved:touches withEvent:event];
     CGPoint nowPoint = [touches.anyObject locationInView:self.view];
-    [_points addObject:[NSValue valueWithCGPoint:nowPoint]];
     objects* obj = [objects sharedObjects];
-    [obj.drawingObjects replaceObjectAtIndex:[obj.drawingObjects count]-1 withObject:_points];
-    if ([_points count]>=4)
+    [obj.drawingObjects addObject:[NSValue valueWithCGPoint:nowPoint]];
+    if ([obj.drawingObjects count]>=3)
         self.state = UIGestureRecognizerStateChanged;
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
     objects* obj  = [objects sharedObjects];
-    [obj addObject:_points];
+    CGPoint nowPoint = [touches.anyObject locationInView:self.view];
+    [obj.drawingObjects addObject:[NSValue valueWithCGPoint:nowPoint]];
+    obj.stoped = true;
     self.state = UIGestureRecognizerStateRecognized;
 }
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{

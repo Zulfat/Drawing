@@ -10,4 +10,7 @@
 
 @interface drawingClass : UIView <UIGestureRecognizerDelegate>
 @property CGPoint bezierHelper1, bezierHelper2, startPoint, endPoint;
+@property (nonatomic) UIImage* image;
+@property UIColor* color;
+@property float penWidth;
 @end

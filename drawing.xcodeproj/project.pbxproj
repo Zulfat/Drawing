@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130D0D7018814A0F00F0BE84 /* images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 130D0D6F18814A0F00F0BE84 /* images.jpg */; };
 		1377A52E187810300071AFA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1377A52D187810300071AFA3 /* Foundation.framework */; };
 		1377A530187810300071AFA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1377A52F187810300071AFA3 /* CoreGraphics.framework */; };
 		1377A532187810300071AFA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1377A531187810300071AFA3 /* UIKit.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		130D0D6F18814A0F00F0BE84 /* images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpg; sourceTree = "<group>"; };
 		1377A52A187810300071AFA3 /* drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1377A52D187810300071AFA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1377A52F187810300071AFA3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -130,6 +132,7 @@
 				1377A56618781BBA0071AFA3 /* customGestureRecognizer.m */,
 				1377A562187816B90071AFA3 /* drawingClass.h */,
 				1377A563187816B90071AFA3 /* drawingClass.m */,
+				130D0D6F18814A0F00F0BE84 /* images.jpg */,
 				1377A568187834210071AFA3 /* objects.h */,
 				1377A569187834210071AFA3 /* objects.m */,
 				1377A545187810300071AFA3 /* Images.xcassets */,
@@ -246,6 +249,7 @@
 				1377A546187810300071AFA3 /* Images.xcassets in Resources */,
 				1377A538187810300071AFA3 /* InfoPlist.strings in Resources */,
 				1377A541187810300071AFA3 /* Main.storyboard in Resources */,
+				130D0D7018814A0F00F0BE84 /* images.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +482,7 @@
 				1377A55E187810300071AFA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1377A55F187810300071AFA3 /* Build configuration list for PBXNativeTarget "drawingTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +491,7 @@
 				1377A561187810300071AFA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

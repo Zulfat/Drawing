@@ -10,6 +10,7 @@
 
 @interface objects : NSObject
 @property NSMutableArray* drawingObjects;
+@property bool stoped;
 -(void) addObject:(NSMutableArray*)pointsArray;
 +(objects*) sharedObjects;
 @end
