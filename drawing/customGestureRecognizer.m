@@ -30,7 +30,7 @@
     [obj.drawingObjects addObject:[NSValue valueWithCGPoint:nowPoint]];
     if ([obj.drawingObjects count]>=3)
         self.state = UIGestureRecognizerStateChanged;
-    if ([obj.drawingObjects count] >=50) {
+    if ([obj.drawingObjects count] >=18) {
         obj.stoped = true;
     }
 }
